@@ -13,7 +13,7 @@ import java.lang.String;
 
 public class Robot
 {
-    // instance variables - replace the example below with your own
+    // instance variables - replace the example below with your ow
     private int idRobot;  
     private String nom;
     private String description;
