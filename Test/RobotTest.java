@@ -81,6 +81,30 @@ public class RobotTest
         assertEquals(MesRobots.get(1).getDescription(), "Twerk");
     }
 
+    @Test
+    public void TestconduireVoiture() {
+        Voiture  voiture1 = new Voiture();
+        voiture1.setCouleur("noir");
+        voiture1.setModele("BMW");
+        voiture1.setType(Voiture.typeVoiture.automatique);
+        Robot monRobot = new Robot(1, "Jul", "Chanteur");
+
+        assertTrue(monRobot.conduireVoiture(voiture1));
+
+    }
+
+    @Test
+    public void TestconduireVoitureFalse() {
+        Voiture  voiture1 = new Voiture();
+        voiture1.setCouleur("noir");
+        voiture1.setModele("BMW");
+        voiture1.setType(Voiture.typeVoiture.manuelle);
+        Robot monRobot = new Robot(1, "Jul", "Chanteur");
+
+        assertFalse(monRobot.conduireVoiture(voiture1));
+
+    }
+
     /*@Test
     public void TestChangerDescription()
     {

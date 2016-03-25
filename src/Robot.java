@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.String;
 
-public class Robot
+public class Robot implements ConducteurItf
 {
     // instance variables - replace the example below with your ow
     private int idRobot;  
@@ -28,6 +28,15 @@ public class Robot
         nom=nom;
         description=description;
 
+    }
+
+    @Override
+    public Boolean conduireVoiture(Voiture voiture){
+        if((voiture.getType()).equals(Voiture.typeVoiture.automatique)) {
+            voiture.setConducteur((ConducteurItf) this);
+            return true;
+        }
+        return false;
     }
 
     public int getIdRobot(){
